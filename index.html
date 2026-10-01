@@ -1,0 +1,502 @@
+
+<!DOCTYPE html>
+<html lang="zh-Hant">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>給你的愛爾蘭抽卡</title>
+
+
+    <style>
+
+        /* =========================
+           基本設定
+           ========================= */
+
+        * {
+            box-sizing: border-box;
+        }
+
+
+        html,
+        body {
+            margin: 0;
+            padding: 0;
+
+            width: 100%;
+            min-height: 100%;
+
+            overflow-x: hidden;
+        }
+
+
+        body {
+
+            /* 首頁背景色 */
+            background: #80389e;
+
+            display: flex;
+            justify-content: center;
+        }
+
+
+        /* =========================
+           整個網站主要區域
+           ========================= */
+
+        .page {
+
+            width: 100%;
+
+            max-width: 1080px;
+
+            position: relative;
+
+            min-height: 100vh;
+        }
+
+
+        /* =========================
+           首頁
+           ========================= */
+
+        #homePage {
+
+            position: relative;
+
+            width: 100%;
+        }
+
+
+        /* 首頁圖片 */
+
+        .home-image {
+
+            display: block;
+
+            width: 100%;
+
+            height: auto;
+        }
+
+
+        /* =========================
+           開始抽卡點擊區域
+           ========================= */
+
+        .start-button {
+
+            position: absolute;
+
+
+            /*
+                原始圖片尺寸：
+                1080 × 1440
+
+                點擊區域：
+                X = 177 ~ 522
+                Y = 954 ~ 1133
+            */
+
+            left: 16.39%;
+
+            top: 66.25%;
+
+            width: 31.94%;
+
+            height: 12.43%;
+
+
+            /* 平常幾乎完全透明 */
+
+            background: rgba(255, 255, 255, 0.001);
+
+            border: none;
+
+            padding: 0;
+
+            margin: 0;
+
+            cursor: pointer;
+
+            z-index: 10;
+
+
+            /* Hover 淡入效果 */
+
+            transition: background-color 0.2s ease;
+        }
+
+
+        /*
+            滑鼠移到開始抽卡區域時
+            顯示淡淡的白色提示
+        */
+
+        .start-button:hover {
+
+            background: rgba(255, 255, 255, 0.18);
+        }
+
+
+        /*
+            點擊時稍微加深
+        */
+
+        .start-button:active {
+
+            background: rgba(255, 255, 255, 0.28);
+        }
+
+
+        /* =========================
+           問題頁
+           ========================= */
+
+        #cardPage {
+
+            display: none;
+
+            width: 100%;
+
+            /*
+                確保整個畫面至少都是問題頁背景色
+            */
+
+            min-height: 100vh;
+
+            background: #ffc1ff;
+
+            padding: 30px 20px;
+
+            text-align: center;
+        }
+
+
+        /*
+            問題頁外層內容
+            讓背景色延伸到整個 viewport
+        */
+
+        body.card-mode {
+
+            background: #ffc1ff;
+        }
+
+
+        /* =========================
+           問題卡片
+           ========================= */
+
+        .card {
+
+            width: 100%;
+
+            max-width: 1080px;
+
+            aspect-ratio: 3 / 4;
+
+            margin: 0 auto 30px;
+
+            background: white;
+
+            border-radius: 20px;
+
+            display: flex;
+
+            justify-content: center;
+
+            align-items: center;
+
+            font-size: 24px;
+
+            color: #333;
+        }
+
+
+        /* =========================
+           再抽一題
+           ========================= */
+
+        .card-button {
+
+            border: none;
+
+            border-radius: 999px;
+
+            padding: 15px 30px;
+
+            font-size: 18px;
+
+            background: #222;
+
+            color: white;
+
+            cursor: pointer;
+
+            transition:
+                background-color 0.2s ease,
+                transform 0.1s ease;
+        }
+
+
+        .card-button:hover {
+
+            background: #444;
+        }
+
+
+        .card-button:active {
+
+            transform: scale(0.97);
+        }
+
+
+        /* =========================
+           回到首頁
+           ========================= */
+
+        .back-home {
+
+            display: block;
+
+            margin: 15px auto 0;
+
+            border: none;
+
+            background: transparent;
+
+            font-size: 14px;
+
+            color: #555;
+
+            cursor: pointer;
+        }
+
+
+        .back-home:hover {
+
+            color: #222;
+        }
+
+
+        /* =========================
+           手機版
+           ========================= */
+
+        @media (max-width: 600px) {
+
+            #cardPage {
+
+                padding: 20px 15px;
+
+            }
+
+
+            .card-button {
+
+                font-size: 16px;
+
+                padding: 13px 25px;
+
+            }
+
+
+            .back-home {
+
+                font-size: 13px;
+
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+    <div class="page">
+
+
+        <!-- ==================================================
+             首頁
+             ================================================== -->
+
+        <div id="homePage">
+
+
+            <img
+                src="home.webp"
+                alt="給你的愛爾蘭抽卡"
+                class="home-image"
+            >
+
+
+            <!-- 開始抽卡透明點擊區 -->
+
+            <button
+                class="start-button"
+                onclick="startCard()"
+                aria-label="開始抽卡"
+            ></button>
+
+
+        </div>
+
+
+
+        <!-- ==================================================
+             問題頁
+             ================================================== -->
+
+        <div id="cardPage">
+
+
+            <!-- 暫時測試卡片 -->
+
+            <div
+                id="card"
+                class="card"
+            >
+
+                🎴
+
+                <br><br>
+
+                這裡之後會出現問題卡片
+
+            </div>
+
+
+
+            <!-- 再抽一題 -->
+
+            <button
+                class="card-button"
+                onclick="drawCard()"
+            >
+
+                再抽一題
+
+            </button>
+
+
+
+            <!-- 回到首頁 -->
+
+            <button
+                class="back-home"
+                onclick="goHome()"
+            >
+
+                回到首頁
+
+            </button>
+
+
+        </div>
+
+
+    </div>
+
+
+
+    <!-- ==================================================
+         JavaScript
+         ================================================== -->
+
+    <script>
+
+
+        /* =========================
+           開始抽卡
+           ========================= */
+
+        function startCard() {
+
+
+            /* 隱藏首頁 */
+
+            document.getElementById("homePage").style.display = "none";
+
+
+            /* 顯示問題頁 */
+
+            document.getElementById("cardPage").style.display = "block";
+
+
+            /* 切換整個網頁背景色 */
+
+            document.body.classList.add("card-mode");
+
+
+            /* 顯示第一張卡 */
+
+            drawCard();
+
+        }
+
+
+
+        /* =========================
+           抽卡
+           ========================= */
+
+        function drawCard() {
+
+
+            document.getElementById("card").innerHTML = `
+
+                🎴
+
+                <br><br>
+
+                這裡之後會出現問題卡片
+
+            `;
+
+        }
+
+
+
+        /* =========================
+           回到首頁
+           ========================= */
+
+        function goHome() {
+
+
+            /* 隱藏問題頁 */
+
+            document.getElementById("cardPage").style.display = "none";
+
+
+            /* 顯示首頁 */
+
+            document.getElementById("homePage").style.display = "block";
+
+
+            /* 恢復首頁背景色 */
+
+            document.body.classList.remove("card-mode");
+
+        }
+
+
+    </script>
+
+
+</body>
+
+</html>
+
