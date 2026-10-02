@@ -40,8 +40,6 @@
 
         body {
 
-            /* 首頁背景色 */
-
             background: #80389e;
 
             display: flex;
@@ -78,13 +76,6 @@
         }
 
 
-        /*
-            首頁圖片
-
-            尺寸：
-            1080 × 1920
-        */
-
         .home-image {
 
             display: block;
@@ -100,10 +91,10 @@
            ================================================== */
 
         /*
-            首頁尺寸：
+            首頁：
+
             1080 × 1920
 
-            點擊區域：
             X = 353 ~ 727
             Y = 1033 ~ 1242
         */
@@ -120,9 +111,6 @@
 
             height: 10.89%;
 
-
-            /* 幾乎完全透明 */
-
             background: rgba(255, 255, 255, 0.001);
 
             border: none;
@@ -133,15 +121,12 @@
 
             cursor: pointer;
 
-            z-index: 10;
-
+            z-index: 20;
 
             transition:
                 background-color 0.2s ease;
         }
 
-
-        /* 滑鼠移到 START */
 
         .start-button:hover {
 
@@ -149,11 +134,190 @@
         }
 
 
-        /* 按下 START */
-
         .start-button:active {
 
             background: rgba(255, 255, 255, 0.28);
+        }
+
+
+        /* ==================================================
+           LOADING BAR
+           ================================================== */
+
+        .loading-bar {
+
+            position: absolute;
+
+            left: 81.76%;
+
+            top: 44.60%;
+
+            width: 73px;
+
+            height: 30px;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: flex-start;
+
+            gap: 0;
+
+            z-index: 15;
+        }
+
+
+        .loading-char {
+
+            display: block;
+
+            flex: none;
+
+            object-fit: contain;
+
+            height: 30px;
+
+            width: auto;
+
+            transform: translateY(0);
+        }
+
+
+        /* ==================================================
+           Loading 動畫
+           ================================================== */
+
+        .loading-8 {
+
+            animation:
+                loadingJump 2.5s infinite;
+
+            animation-delay: 0s;
+        }
+
+
+        .loading-7 {
+
+            animation:
+                loadingJump 2.5s infinite;
+
+            animation-delay: 0.18s;
+        }
+
+
+        .loading-percent {
+
+            animation:
+                loadingJump 2.5s infinite;
+
+            animation-delay: 0.36s;
+        }
+
+
+        .loading-dot-1 {
+
+            animation:
+                loadingJump 2.5s infinite;
+
+            animation-delay: 0.54s;
+        }
+
+
+        .loading-dot-2 {
+
+            animation:
+                loadingJump 2.5s infinite;
+
+            animation-delay: 0.72s;
+        }
+
+
+        .loading-dot-3 {
+
+            animation:
+                loadingJump 2.5s infinite;
+
+            animation-delay: 0.90s;
+        }
+
+
+        @keyframes loadingJump {
+
+            0%,
+            72%,
+            100% {
+
+                transform: translateY(0);
+            }
+
+
+            8% {
+
+                transform: translateY(-4px);
+            }
+
+
+            16% {
+
+                transform: translateY(0);
+            }
+
+        }
+
+
+        /* ==================================================
+           START BUTTON 手指
+           ================================================== */
+
+        /*
+            X = 658 ~ 763
+            Y = 1166 ~ 1285
+
+            105 × 119
+        */
+
+        .start-hand {
+
+            position: absolute;
+
+            left: 60.93%;
+
+            top: 60.73%;
+
+            width: 9.72%;
+
+            height: 6.20%;
+
+            object-fit: contain;
+
+            z-index: 25;
+
+            pointer-events: none;
+
+            animation:
+                handPulse 1.8s ease-in-out infinite;
+        }
+
+
+        @keyframes handPulse {
+
+            0%,
+            100% {
+
+                opacity: 0.55;
+
+                filter: brightness(1);
+            }
+
+
+            50% {
+
+                opacity: 1;
+
+                filter: brightness(1.18);
+            }
+
         }
 
 
@@ -167,20 +331,11 @@
 
             width: 100%;
 
-            min-height: 100vh;
-
             background: #ffc1ff;
 
-            padding: 30px 20px 40px;
-
-            text-align: center;
+            position: relative;
         }
 
-
-        /*
-            確保問題頁整個瀏覽器背景
-            都是 #ffc1ff
-        */
 
         body.card-mode {
 
@@ -188,28 +343,33 @@
         }
 
 
-        /* ==================================================
-           問題卡片
-           ================================================== */
+        /*
+            問題頁容器
 
-        .card {
+            同樣使用：
+
+            1080 × 1920
+        */
+
+        .question-page {
+
+            position: relative;
 
             width: 100%;
 
             max-width: 1080px;
 
-            margin: 0 auto 30px;
+            margin: 0 auto;
         }
 
 
         /*
-            真正的問題卡片圖片
+            問題頁完整背景
 
-            尺寸：
-            1080 × 1440
+            1080 × 1920
         */
 
-        .card-image {
+        .question-background {
 
             display: block;
 
@@ -217,7 +377,115 @@
 
             height: auto;
 
-            margin: 0 auto;
+            margin: 0;
+
+            padding: 0;
+        }
+
+
+        /* ==================================================
+           哭臉
+           ================================================== */
+
+        /*
+            原始設計：
+
+            X = 930 ~ 981
+            Y = 1391 ~ 1442
+
+            51.1 × 51.1
+        */
+
+        .cry-face {
+
+            position: absolute;
+
+            left: 86.11%;
+
+            top: 72.45%;
+
+            width: 4.73%;
+
+            height: auto;
+
+            z-index: 10;
+
+            pointer-events: none;
+
+            animation:
+                cryBounce 1.8s ease-in-out infinite;
+        }
+
+
+        /*
+            哭臉上下跳動
+
+            幅度約 5px
+        */
+
+        @keyframes cryBounce {
+
+            0%,
+            100% {
+
+                transform: translateY(0);
+            }
+
+
+            50% {
+
+                transform: translateY(-5px);
+            }
+
+        }
+
+
+        /* ==================================================
+           回首頁
+           ================================================== */
+
+        /*
+            X = 349 ~ 490
+            Y = 1593 ~ 1734
+
+            141 × 141
+        */
+
+        .back-home-button {
+
+            position: absolute;
+
+            left: 32.31%;
+
+            top: 82.97%;
+
+            width: 13.06%;
+
+            height: 7.34%;
+
+            background: rgba(255, 255, 255, 0.001);
+
+            border: none;
+
+            padding: 0;
+
+            margin: 0;
+
+            cursor: pointer;
+
+            z-index: 20;
+        }
+
+
+        .back-home-button:hover {
+
+            background: rgba(255, 255, 255, 0.10);
+        }
+
+
+        .back-home-button:active {
+
+            background: rgba(255, 255, 255, 0.18);
         }
 
 
@@ -225,65 +493,48 @@
            再抽一題
            ================================================== */
 
-        .card-button {
+        /*
+            X = 585 ~ 737
+            Y = 1597 ~ 1749
+
+            151.75 × 151.75
+        */
+
+        .draw-card-button {
+
+            position: absolute;
+
+            left: 54.17%;
+
+            top: 83.18%;
+
+            width: 14.05%;
+
+            height: 7.90%;
+
+            background: rgba(255, 255, 255, 0.001);
 
             border: none;
 
-            border-radius: 999px;
+            padding: 0;
 
-            padding: 15px 30px;
-
-            font-size: 18px;
-
-            background: #222;
-
-            color: white;
+            margin: 0;
 
             cursor: pointer;
 
-            transition:
-                background-color 0.2s ease,
-                transform 0.1s ease;
+            z-index: 20;
         }
 
 
-        .card-button:hover {
+        .draw-card-button:hover {
 
-            background: #444;
+            background: rgba(255, 255, 255, 0.10);
         }
 
 
-        .card-button:active {
+        .draw-card-button:active {
 
-            transform: scale(0.97);
-        }
-
-
-        /* ==================================================
-           回到首頁
-           ================================================== */
-
-        .back-home {
-
-            display: block;
-
-            margin: 15px auto 0;
-
-            border: none;
-
-            background: transparent;
-
-            font-size: 14px;
-
-            color: #555;
-
-            cursor: pointer;
-        }
-
-
-        .back-home:hover {
-
-            color: #222;
+            background: rgba(255, 255, 255, 0.18);
         }
 
 
@@ -293,29 +544,15 @@
 
         @media (max-width: 600px) {
 
-            #cardPage {
+            .page {
 
-                padding: 20px 10px 30px;
+                width: 100%;
             }
 
 
-            .card {
+            .question-page {
 
-                margin-bottom: 20px;
-            }
-
-
-            .card-button {
-
-                font-size: 16px;
-
-                padding: 13px 25px;
-            }
-
-
-            .back-home {
-
-                font-size: 13px;
+                width: 100%;
             }
 
         }
@@ -338,6 +575,8 @@
         <div id="homePage">
 
 
+            <!-- 首頁背景 -->
+
             <img
                 src="home.webp"
                 alt="給你的愛爾蘭抽卡"
@@ -345,13 +584,79 @@
             >
 
 
-            <!-- START BUTTON -->
+
+            <!-- ==================================================
+                 Loading
+                 ================================================== -->
+
+            <div class="loading-bar">
+
+
+                <img
+                    src="loading-8.png"
+                    class="loading-char loading-8"
+                    alt=""
+                >
+
+
+                <img
+                    src="loading-7.png"
+                    class="loading-char loading-7"
+                    alt=""
+                >
+
+
+                <img
+                    src="loading-percent.png"
+                    class="loading-char loading-percent"
+                    alt=""
+                >
+
+
+                <img
+                    src="loading-dot1.png"
+                    class="loading-char loading-dot-1"
+                    alt=""
+                >
+
+
+                <img
+                    src="loading-dot2.png"
+                    class="loading-char loading-dot-2"
+                    alt=""
+                >
+
+
+                <img
+                    src="loading-dot3.png"
+                    class="loading-char loading-dot-3"
+                    alt=""
+                >
+
+
+            </div>
+
+
+
+            <!-- ==================================================
+                 START
+                 ================================================== -->
 
             <button
                 class="start-button"
                 onclick="startCard()"
                 aria-label="開始抽卡"
             ></button>
+
+
+
+            <!-- 手指 -->
+
+            <img
+                src="start-hand.webp"
+                class="start-hand"
+                alt=""
+            >
 
 
         </div>
@@ -365,59 +670,56 @@
         <div id="cardPage">
 
 
-            <!-- ==================================================
-                 問題卡片
-                 ================================================== -->
+            <div class="question-page">
 
-            <div
-                id="card"
-                class="card"
-            >
 
-                <!--
-                    第一張測試卡
-
-                    檔名：
-                    card001.webp
-                -->
+                <!-- 問題頁背景 -->
 
                 <img
+                    id="questionBackground"
                     src="card001.webp"
                     alt="問題卡片"
-                    class="card-image"
+                    class="question-background"
                 >
 
+
+
+                <!-- ==================================================
+                     哭臉
+                     ================================================== -->
+
+                <img
+                    src="cry-face.png"
+                    alt=""
+                    class="cry-face"
+                >
+
+
+
+                <!-- ==================================================
+                     回首頁
+                     ================================================== -->
+
+                <button
+                    class="back-home-button"
+                    onclick="goHome()"
+                    aria-label="回到首頁"
+                ></button>
+
+
+
+                <!-- ==================================================
+                     再抽一題
+                     ================================================== -->
+
+                <button
+                    class="draw-card-button"
+                    onclick="drawCard()"
+                    aria-label="再抽一題"
+                ></button>
+
+
             </div>
-
-
-
-            <!-- ==================================================
-                 再抽一題
-                 ================================================== -->
-
-            <button
-                class="card-button"
-                onclick="drawCard()"
-            >
-
-                再抽一題
-
-            </button>
-
-
-
-            <!-- ==================================================
-                 回到首頁
-                 ================================================== -->
-
-            <button
-                class="back-home"
-                onclick="goHome()"
-            >
-
-                回到首頁
-
-            </button>
 
 
         </div>
@@ -435,28 +737,155 @@
 
 
         /* ==================================================
-           開始抽卡
+           問題卡片清單
+           ==================================================
+
+           之後新增卡片時，
+           只要在這裡增加檔名。
+
+           例如：
+
+           "card001.webp",
+           "card002.webp",
+           "card003.webp"
+
+        ================================================== */
+
+        const cards = [
+
+            "card001.webp"
+
+        ];
+
+
+
+        /* ==================================================
+           尚未抽過的卡片
+           ================================================== */
+
+        let remainingCards = [];
+
+
+
+        /* ==================================================
+           建立新的一輪抽卡池
+           ================================================== */
+
+        function resetCardPool() {
+
+            /*
+                用 [...cards] 複製一份，
+                避免直接修改原始卡片清單。
+            */
+
+            remainingCards = [...cards];
+
+        }
+
+
+
+        /* ==================================================
+           隨機抽一張「尚未抽過」的卡
+           ================================================== */
+
+        function drawCard() {
+
+
+            /*
+                如果抽卡池已經空了，
+                代表上一輪全部抽完。
+
+                自動重新建立新的一輪。
+            */
+
+            if (remainingCards.length === 0) {
+
+                resetCardPool();
+
+            }
+
+
+            /*
+                隨機選擇位置
+            */
+
+            const randomIndex =
+                Math.floor(
+                    Math.random() * remainingCards.length
+                );
+
+
+            /*
+                取得卡片檔名
+            */
+
+            const selectedCard =
+                remainingCards[randomIndex];
+
+
+            /*
+                從「尚未抽過」清單移除
+
+                這就是避免同一輪重複的關鍵。
+            */
+
+            remainingCards.splice(
+                randomIndex,
+                1
+            );
+
+
+            /*
+                顯示抽中的卡片
+            */
+
+            document.getElementById(
+                "questionBackground"
+            ).src = selectedCard;
+
+        }
+
+
+
+        /* ==================================================
+           START
            ================================================== */
 
         function startCard() {
 
 
-            /* 隱藏首頁 */
+            /*
+                開始新的抽卡旅程
 
-            document.getElementById("homePage").style.display = "none";
+                每次從首頁重新開始，
+                都重新建立一輪卡池。
+            */
 
-
-            /* 顯示問題頁 */
-
-            document.getElementById("cardPage").style.display = "block";
-
-
-            /* 切換背景色 */
-
-            document.body.classList.add("card-mode");
+            resetCardPool();
 
 
-            /* 顯示第一張卡 */
+            /*
+                顯示問題頁
+            */
+
+            document.getElementById(
+                "homePage"
+            ).style.display = "none";
+
+
+            document.getElementById(
+                "cardPage"
+            ).style.display = "block";
+
+
+            document.body.classList.add(
+                "card-mode"
+            );
+
+
+            /*
+                立即抽第一張
+            */
 
             drawCard();
 
@@ -465,52 +894,31 @@
 
 
         /* ==================================================
-           抽卡
-           ================================================== */
-
-        function drawCard() {
-
-
-            /*
-                目前只有一張卡，
-                所以暫時固定顯示 card001.webp。
-            */
-
-
-            document.getElementById("card").innerHTML = `
-
-                <img
-                    src="card001.webp"
-                    alt="問題卡片"
-                    class="card-image"
-                >
-
-            `;
-
-        }
-
-
-
-        /* ==================================================
-           回到首頁
+           回首頁
            ================================================== */
 
         function goHome() {
 
 
-            /* 隱藏問題頁 */
-
-            document.getElementById("cardPage").style.display = "none";
-
-
-            /* 顯示首頁 */
-
-            document.getElementById("homePage").style.display = "block";
+            document.getElementById(
+                "cardPage"
+            ).style.display = "none";
 
 
-            /* 恢復首頁背景 */
+            document.getElementById(
+                "homePage"
+            ).style.display = "block";
 
-            document.body.classList.remove("card-mode");
+
+            document.body.classList.remove(
+                "card-mode"
+            );
+
+
+            /*
+                下一次從首頁開始時，
+                會重新建立一輪卡池。
+            */
 
         }
 
