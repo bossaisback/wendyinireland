@@ -12,9 +12,10 @@
 
     <title>Wendy In Ireland With All luv💕</title>
 
-    <!-- ==============================================
-         網站分享預覽資訊
-         ============================================== -->
+
+    <!-- ==================================================
+         Open Graph
+         ================================================== -->
 
     <meta
         property="og:title"
@@ -41,7 +42,10 @@
         content="https://bossaisback.github.io/wendyinireland/home.webp"
     >
 
-    <!-- Twitter / X 分享預覽 -->
+
+    <!-- ==================================================
+         Twitter / X
+         ================================================== -->
 
     <meta
         name="twitter:card"
@@ -63,7 +67,9 @@
         content="https://bossaisback.github.io/wendyinireland/home.webp"
     >
 
+
     <style>
+
 
         /* ==================================================
            基本設定
@@ -97,10 +103,6 @@
         }
 
 
-        /* ==================================================
-           網站主要容器
-           ================================================== */
-
         .page {
 
             width: 100%;
@@ -111,6 +113,7 @@
 
             position: relative;
         }
+
 
 
         /* ==================================================
@@ -135,18 +138,13 @@
         }
 
 
+
         /* ==================================================
            START BUTTON
+
+           X = 353 ~ 727
+           Y = 1033 ~ 1242
            ================================================== */
-
-        /*
-            首頁：
-
-            1080 × 1920
-
-            X = 353 ~ 727
-            Y = 1033 ~ 1242
-        */
 
         .start-button {
 
@@ -160,7 +158,7 @@
 
             height: 10.89%;
 
-            background: rgba(255, 255, 255, 0.001);
+            background: rgba(255,255,255,0.001);
 
             border: none;
 
@@ -179,33 +177,27 @@
 
         .start-button:hover {
 
-            background: rgba(255, 255, 255, 0.18);
+            background:
+                rgba(255,255,255,0.18);
         }
 
 
         .start-button:active {
 
-            background: rgba(255, 255, 255, 0.28);
+            background:
+                rgba(255,255,255,0.28);
         }
 
 
+
         /* ==================================================
-           LOADING BAR
+           87%...
+
+           X = 883
+           Y = 866
+
+           依照 1080 × 1920 設計稿等比例縮放
            ================================================== */
-
-        /*
-            87%...
-
-            位置：
-            X = 883
-            Y = 866
-
-            顯示高度：
-            30px
-
-            每個字元寬度明確指定，
-            避免 GitHub Pages 上圖片尺寸異常放大。
-        */
 
         .loading-bar {
 
@@ -213,11 +205,11 @@
 
             left: 81.76%;
 
-            top: 44.60%;
+            top: 45.10%;
 
-            width: 73px;
+            width: 6.7593%;
 
-            height: 30px;
+            height: auto;
 
             display: flex;
 
@@ -237,19 +229,15 @@
 
             flex: none;
 
-            height: 30px;
+            height: auto;
 
             object-fit: contain;
-
-            transform: translateY(0);
         }
 
 
-        /* 8 */
-
         .loading-8 {
 
-            width: 14.12px;
+            width: 19.34%;
 
             animation:
                 loadingJump 2.5s infinite;
@@ -258,11 +246,9 @@
         }
 
 
-        /* 7 */
-
         .loading-7 {
 
-            width: 14.12px;
+            width: 19.34%;
 
             animation:
                 loadingJump 2.5s infinite;
@@ -271,11 +257,9 @@
         }
 
 
-        /* % */
-
         .loading-percent {
 
-            width: 21.18px;
+            width: 29.01%;
 
             animation:
                 loadingJump 2.5s infinite;
@@ -284,11 +268,9 @@
         }
 
 
-        /* . */
-
         .loading-dot-1 {
 
-            width: 7.06px;
+            width: 9.67%;
 
             animation:
                 loadingJump 2.5s infinite;
@@ -299,7 +281,7 @@
 
         .loading-dot-2 {
 
-            width: 7.06px;
+            width: 9.67%;
 
             animation:
                 loadingJump 2.5s infinite;
@@ -310,7 +292,7 @@
 
         .loading-dot-3 {
 
-            width: 7.06px;
+            width: 9.67%;
 
             animation:
                 loadingJump 2.5s infinite;
@@ -325,34 +307,34 @@
             72%,
             100% {
 
-                transform: translateY(0);
+                transform:
+                    translateY(0);
             }
 
 
             8% {
 
-                transform: translateY(-4px);
+                transform:
+                    translateY(-4px);
             }
 
 
             16% {
 
-                transform: translateY(0);
+                transform:
+                    translateY(0);
             }
 
         }
 
 
+
         /* ==================================================
-           START BUTTON 手指
+           START 手指
+
+           X = 658 ~ 763
+           Y = 1166 ~ 1285
            ================================================== */
-
-        /*
-            X = 658 ~ 763
-            Y = 1166 ~ 1285
-
-            105 × 119
-        */
 
         .start-hand {
 
@@ -364,7 +346,7 @@
 
             width: 9.72%;
 
-            height: 6.20%;
+            height: auto;
 
             object-fit: contain;
 
@@ -384,7 +366,8 @@
 
                 opacity: 0.55;
 
-                filter: brightness(1);
+                filter:
+                    brightness(1);
             }
 
 
@@ -392,10 +375,12 @@
 
                 opacity: 1;
 
-                filter: brightness(1.18);
+                filter:
+                    brightness(1.18);
             }
 
         }
+
 
 
         /* ==================================================
@@ -420,10 +405,6 @@
         }
 
 
-        /* ==================================================
-           問題頁主要容器
-           ================================================== */
-
         .question-page {
 
             position: relative;
@@ -435,12 +416,6 @@
             margin: 0 auto;
         }
 
-
-        /*
-            問題頁背景：
-
-            1080 × 1920
-        */
 
         .question-background {
 
@@ -456,16 +431,22 @@
         }
 
 
+
         /* ==================================================
-           哭臉
+           一般 Card 裝飾
+
+           這些物件只有一般 Card 顯示。
+           card013 時會全部隱藏。
            ================================================== */
 
-        /*
-            X = 930 ~ 981
-            Y = 1391 ~ 1442
 
-            51.1 × 51.1
-        */
+        /* ==================================================
+           哭臉
+
+           X = 930 ~ 981
+           Y = 1391 ~ 1442
+           大小 = 51.1 × 51.1
+           ================================================== */
 
         .cry-face {
 
@@ -493,39 +474,27 @@
             0%,
             100% {
 
-                transform: translateY(0);
+                transform:
+                    translateY(0);
             }
 
 
             50% {
 
-                transform: translateY(-5px);
+                transform:
+                    translateY(-5px);
             }
 
         }
 
 
+
         /* ==================================================
-           藍色蝴蝶 GIF
+           藍色蝴蝶
+
+           X = 732
+           Y = 522
            ================================================== */
-
-        /*
-            原始 GIF：
-            200 × 200
-
-            X = 732
-            Y = 522
-
-            這次維持原始比例，
-            不再使用 object-fit: fill，
-            避免蝴蝶被壓扁。
-
-            顯示寬度：
-            200px
-
-            顯示高度：
-            200px
-        */
 
         .blue-butterfly {
 
@@ -533,7 +502,7 @@
 
             left: 67.78%;
 
-            top: 26%;
+            top: 27.19%;
 
             width: 18.52%;
 
@@ -547,20 +516,13 @@
         }
 
 
+
         /* ==================================================
-           粉愛心 GIF
+           粉愛心
+
+           X = 265
+           Y = 890
            ================================================== */
-
-        /*
-            X = 265
-            Y = 890
-
-            顯示尺寸：
-            62 × 56
-
-            GIF 原始尺寸：
-            300 × 284
-        */
 
         .pink-heart {
 
@@ -582,20 +544,13 @@
         }
 
 
+
         /* ==================================================
-           相機 GIF
+           相機
+
+           X = 889
+           Y = 1204
            ================================================== */
-
-        /*
-            X = 889
-            Y = 1204
-
-            顯示尺寸：
-            87 × 81
-
-            GIF 原始尺寸：
-            256 × 256
-        */
 
         .camera {
 
@@ -617,20 +572,13 @@
         }
 
 
+
         /* ==================================================
-           手機 GIF
+           手機
+
+           X = 231
+           Y = 1484
            ================================================== */
-
-        /*
-            X = 231
-            Y = 1484
-
-            顯示尺寸：
-            75 × 91
-
-            GIF 原始尺寸：
-            500 × 500
-        */
 
         .phone {
 
@@ -652,16 +600,109 @@
         }
 
 
+
         /* ==================================================
-           回首頁
+           CARD013 專用漂浮物件
+
+           X = 135
+           Y = 1002
+
+           顯示尺寸：
+           199.09 × 74.66
+
+           原始檔案：
+           181 × 39
+
+           只有 CARD013 顯示
            ================================================== */
 
-        /*
-            X = 349 ~ 490
-            Y = 1593 ~ 1734
+        .floating-object {
 
-            141 × 141
-        */
+            position: absolute;
+
+            left: 12.50%;
+
+            top: 52.19%;
+
+            width: 18.43%;
+
+            height: auto;
+
+            z-index: 12;
+
+            pointer-events: none;
+
+            display: none;
+
+            animation:
+                floatingMove 2.8s ease-in-out infinite;
+        }
+
+
+        /* ==================================================
+           漂浮動畫
+           ================================================== */
+
+        @keyframes floatingMove {
+
+            0%,
+            100% {
+
+                transform:
+                    translateY(0);
+            }
+
+
+            50% {
+
+                transform:
+                    translateY(-6px);
+            }
+
+        }
+
+
+
+        /* ==================================================
+           CARD013 模式
+
+           當 CARD013 出現時：
+
+           ❌ 蝴蝶
+           ❌ 粉愛心
+           ❌ 哭臉
+           ❌ 相機
+           ❌ 手機
+
+           ✅ floating object
+           ✅ 回首頁
+           ✅ 再抽一題
+           ================================================== */
+
+        .card013-mode .blue-butterfly,
+        .card013-mode .pink-heart,
+        .card013-mode .cry-face,
+        .card013-mode .camera,
+        .card013-mode .phone {
+
+            display: none;
+        }
+
+
+        .card013-mode .floating-object {
+
+            display: block;
+        }
+
+
+
+        /* ==================================================
+           回首頁
+
+           X = 349 ~ 490
+           Y = 1593 ~ 1734
+           大小 = 141 × 141
+           ================================================== */
 
         .back-home-button {
 
@@ -675,7 +716,8 @@
 
             height: 7.34%;
 
-            background: rgba(255, 255, 255, 0.001);
+            background:
+                rgba(255,255,255,0.001);
 
             border: none;
 
@@ -691,26 +733,26 @@
 
         .back-home-button:hover {
 
-            background: rgba(255, 255, 255, 0.10);
+            background:
+                rgba(255,255,255,0.10);
         }
 
 
         .back-home-button:active {
 
-            background: rgba(255, 255, 255, 0.18);
+            background:
+                rgba(255,255,255,0.18);
         }
+
 
 
         /* ==================================================
            再抽一題
+
+           X = 585 ~ 737
+           Y = 1597 ~ 1749
+           大小 = 151.75 × 151.75
            ================================================== */
-
-        /*
-            X = 585 ~ 737
-            Y = 1597 ~ 1749
-
-            151.75 × 151.75
-        */
 
         .draw-card-button {
 
@@ -724,7 +766,8 @@
 
             height: 7.90%;
 
-            background: rgba(255, 255, 255, 0.001);
+            background:
+                rgba(255,255,255,0.001);
 
             border: none;
 
@@ -740,14 +783,17 @@
 
         .draw-card-button:hover {
 
-            background: rgba(255, 255, 255, 0.10);
+            background:
+                rgba(255,255,255,0.10);
         }
 
 
         .draw-card-button:active {
 
-            background: rgba(255, 255, 255, 0.18);
+            background:
+                rgba(255,255,255,0.18);
         }
+
 
 
         /* ==================================================
@@ -769,9 +815,11 @@
 
         }
 
+
     </style>
 
 </head>
+
 
 
 <body>
@@ -794,7 +842,9 @@
             >
 
 
-            <!-- Loading -->
+            <!-- ==================================================
+                 87%...
+                 ================================================== -->
 
             <div class="loading-bar">
 
@@ -844,6 +894,7 @@
             </div>
 
 
+
             <!-- START -->
 
             <button
@@ -853,7 +904,8 @@
             ></button>
 
 
-            <!-- 手指 -->
+
+            <!-- START 手指 -->
 
             <img
                 src="start-hand.webp"
@@ -873,10 +925,15 @@
         <div id="cardPage">
 
 
-            <div class="question-page">
+            <div
+                id="questionPage"
+                class="question-page"
+            >
 
 
-                <!-- 問題頁背景 -->
+                <!-- ==================================================
+                     卡片背景
+                     ================================================== -->
 
                 <img
                     id="questionBackground"
@@ -886,9 +943,12 @@
                 >
 
 
+
                 <!-- ==================================================
-                     藍色蝴蝶
+                     一般 Card 裝飾
                      ================================================== -->
+
+                <!-- 藍色蝴蝶 -->
 
                 <img
                     src="blue-butterfly.gif"
@@ -897,9 +957,8 @@
                 >
 
 
-                <!-- ==================================================
-                     粉愛心
-                     ================================================== -->
+
+                <!-- 粉愛心 -->
 
                 <img
                     src="pink-heart.gif"
@@ -908,9 +967,8 @@
                 >
 
 
-                <!-- ==================================================
-                     哭臉
-                     ================================================== -->
+
+                <!-- 哭臉 -->
 
                 <img
                     src="cry-face.png"
@@ -919,9 +977,8 @@
                 >
 
 
-                <!-- ==================================================
-                     相機
-                     ================================================== -->
+
+                <!-- 相機 -->
 
                 <img
                     src="camera.gif"
@@ -930,15 +987,28 @@
                 >
 
 
-                <!-- ==================================================
-                     手機
-                     ================================================== -->
+
+                <!-- 手機 -->
 
                 <img
                     src="phone.gif"
                     class="phone"
                     alt=""
                 >
+
+
+
+                <!-- ==================================================
+                     CARD013 專用漂浮物件
+                     ================================================== -->
+
+                <img
+                    id="floatingObject"
+                    src="floating-object.webp"
+                    class="floating-object"
+                    alt=""
+                >
+
 
 
                 <!-- ==================================================
@@ -950,6 +1020,7 @@
                     onclick="goHome()"
                     aria-label="回到首頁"
                 ></button>
+
 
 
                 <!-- ==================================================
@@ -981,35 +1052,37 @@
 
 
         /* ==================================================
-           問題卡片清單
+           所有問題卡片
 
-           之後新增卡片時，
-           只需要在這裡增加檔名。
-
-           例如：
-
-           "card001.webp",
-           "card002.webp",
-           "card003.webp"
-
-        ================================================== */
+           目前共 13 張
+           ================================================== */
 
         const cards = [
 
             "card001.webp",
             "card002.webp",
-           "card003.webp",
-           "card004.webp",
-           "card005.webp",
-           "card006.webp",
-           "card007.webp",
-           "card008.webp",
-           "card009.webp",
-           "card010.webp",
-           "card011.webp",
-           "card012.webp",
+            "card003.webp",
+            "card004.webp",
+            "card005.webp",
+            "card006.webp",
+            "card007.webp",
+            "card008.webp",
+            "card009.webp",
+            "card010.webp",
+            "card011.webp",
+            "card012.webp",
+            "card013.webp"
 
         ];
+
+
+
+        /* ==================================================
+           特殊卡片
+           ================================================== */
+
+        const specialCard =
+            "card013.webp";
 
 
 
@@ -1022,30 +1095,90 @@
 
 
         /* ==================================================
+           目前顯示的卡片
+           ================================================== */
+
+        let currentCard = "";
+
+
+
+        /* ==================================================
            建立新的一輪抽卡池
            ================================================== */
 
         function resetCardPool() {
 
-            remainingCards = [...cards];
+            remainingCards =
+                [...cards];
 
         }
 
 
 
         /* ==================================================
-           隨機抽一張尚未抽過的卡
+           更新問題頁裝飾
+
+           一般 Card：
+           顯示蝴蝶、愛心、哭臉、相機、手機
+
+           CARD013：
+           隱藏上述全部，只顯示 floating object
+           ================================================== */
+
+        function updateCardDecorations() {
+
+
+            const questionPage =
+                document.getElementById(
+                    "questionPage"
+                );
+
+
+            /*
+                先移除特殊 Card 狀態
+            */
+
+            questionPage.classList.remove(
+                "card013-mode"
+            );
+
+
+            /*
+                如果現在是 CARD013
+            */
+
+            if (
+                currentCard === specialCard
+            ) {
+
+                questionPage.classList.add(
+                    "card013-mode"
+                );
+
+            }
+
+        }
+
+
+
+        /* ==================================================
+           隨機抽卡
+
+           同一輪不重複
+           全部抽完才重新開始
            ================================================== */
 
         function drawCard() {
 
 
             /*
-                如果上一輪已經全部抽完，
-                自動建立新的一輪。
+                如果本輪已經全部抽完，
+                建立下一輪。
             */
 
-            if (remainingCards.length === 0) {
+            if (
+                remainingCards.length === 0
+            ) {
 
                 resetCardPool();
 
@@ -1053,12 +1186,13 @@
 
 
             /*
-                隨機選擇位置
+                隨機選擇
             */
 
             const randomIndex =
                 Math.floor(
-                    Math.random() * remainingCards.length
+                    Math.random() *
+                    remainingCards.length
                 );
 
 
@@ -1066,12 +1200,16 @@
                 取得卡片
             */
 
-            const selectedCard =
-                remainingCards[randomIndex];
+            currentCard =
+                remainingCards[
+                    randomIndex
+                ];
 
 
             /*
-                從尚未抽過的清單移除
+                從本輪移除
+
+                所以本輪不會再次抽到。
             */
 
             remainingCards.splice(
@@ -1081,12 +1219,20 @@
 
 
             /*
-                顯示抽中的卡片
+                更換卡片背景
             */
 
             document.getElementById(
                 "questionBackground"
-            ).src = selectedCard;
+            ).src =
+                currentCard;
+
+
+            /*
+                更新裝飾
+            */
+
+            updateCardDecorations();
 
         }
 
@@ -1094,17 +1240,27 @@
 
         /* ==================================================
            START
+
+           從首頁進入問題頁
            ================================================== */
 
         function startCard() {
 
 
             /*
-                每次從首頁開始，
-                都重新建立一輪抽卡池。
+                第一次使用時建立抽卡池。
+
+                如果之前已經抽過，
+                不重新洗牌。
             */
 
-            resetCardPool();
+            if (
+                remainingCards.length === 0
+            ) {
+
+                resetCardPool();
+
+            }
 
 
             /*
@@ -1113,7 +1269,8 @@
 
             document.getElementById(
                 "homePage"
-            ).style.display = "none";
+            ).style.display =
+                "none";
 
 
             /*
@@ -1122,8 +1279,13 @@
 
             document.getElementById(
                 "cardPage"
-            ).style.display = "block";
+            ).style.display =
+                "block";
 
+
+            /*
+                問題頁背景色
+            */
 
             document.body.classList.add(
                 "card-mode"
@@ -1141,19 +1303,25 @@
 
 
         /* ==================================================
-           回到首頁
+           回首頁
+
+           不清除抽卡池。
+           因此目前這一輪的進度會保留。
            ================================================== */
 
         function goHome() {
 
+
             document.getElementById(
                 "cardPage"
-            ).style.display = "none";
+            ).style.display =
+                "none";
 
 
             document.getElementById(
                 "homePage"
-            ).style.display = "block";
+            ).style.display =
+                "block";
 
 
             document.body.classList.remove(
